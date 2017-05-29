@@ -32,6 +32,12 @@ namespace BottomBar
         View root;
         Context context;
         ViewGroup.LayoutParams param;
+        Tab clickedTab;
+        /// <summary>
+        ///   if actiivity will recreated (without saveinstance)
+        /// </summary>
+        private static int checked_tab = -1;
+
         public MyBottomBar(Context context) : base(context)
         {
             this.context = context;
@@ -59,7 +65,11 @@ namespace BottomBar
             param = linearLayoutE.LayoutParameters;
             DisplayMetrics dm = Resources.DisplayMetrics;
             int id = radiogroup.GetChildAt(0).Id;
-            
+         
+            //if (checked_tab == -1)
+            //{
+            //    checked_tab = id;
+            //}
             ((RadioButton)root.FindViewById(id)).Checked = true;
             param.Width = dm.WidthPixels / countBtns;
             for (int i = 0; i < countBtns; i++)
@@ -72,10 +82,46 @@ namespace BottomBar
         {
             if (OnChecked != null)
             {
+                checked_tab = e.CheckedId;
                 OnChecked(this, new MyEventArgs((RadioButton)FindViewById(e.CheckedId)));
             }
         }
-        
-        
+
+        /// <summary>
+        /// For dynamic add tabs
+        /// </summary>
+        /// <param name="tabDatas"></param>
+        public void init(TabData[] tabDatas)
+        {
+            root = Inflate(context, Resource.Layout.bottom_bar, this);
+            RadioGroup linearLayout = (RadioGroup)root.FindViewById(Resource.Id.bottombar);
+            LinearLayout linearLayoutE = (LinearLayout)root.FindViewById(Resource.Id.example);
+            param = linearLayoutE.LayoutParameters;
+            DisplayMetrics dm = Resources.DisplayMetrics;
+
+            param.Width = dm.WidthPixels / tabDatas.Length;
+            for (int i = 0; i < tabDatas.Length; i++)
+            {
+                Tab tab = new Tab(context);
+                tab.init(tabDatas[i]);
+                tab.LayoutParameters = (param);
+                linearLayout.AddView(tab);
+                tab.Click += tabCick;
+
+                if (i == 0 && clickedTab == null)
+                {
+                    clickedTab = tab;
+                }
+            }
+
+            void tabCick(object v, EventArgs e)
+            {
+                Tab tab = ((Tab)v);
+                tab.check();
+                tab.go();
+                if (clickedTab != null) clickedTab.check();
+                clickedTab = tab;
+            }
+        }
     }
 }

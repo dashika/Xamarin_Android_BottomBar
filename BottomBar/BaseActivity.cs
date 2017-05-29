@@ -26,6 +26,33 @@ namespace BottomBar
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
+            /*  
+             * Dynamic cterting tabs in Bottom Bar 
+             * 
+              TabData[] tabData = new TabData[4];
+              TabData tabData1 = new TabData();
+              Drawable myIcon = Resources.GetDrawable(Resource.Drawable.tab1);
+              Intent intent = new Intent(this, typeof(MainActivity));       
+              tabData1.setIcon(myIcon).setText("text").setIntent(intent);
+              tabData[0] = tabData1;
+              TabData tabData2 = new TabData();
+              intent = new Intent(this, typeof(MainActivity));
+              Drawable myIcon2 = Resources.GetDrawable(Resource.Drawable.tab1);
+              tabData2.setIcon(myIcon2).setText("text").setIntent(intent);
+              tabData[1] = tabData2;
+              TabData tabData3 = new TabData();
+              intent = new Intent(this, typeof(MainActivity));
+              Drawable myIcon3 = Resources.GetDrawable(Resource.Drawable.tab1);
+              tabData3.setIcon(myIcon3).setText("text").setIntent(intent);
+              tabData[2] = tabData3;
+              TabData tabData4 = new TabData();
+              intent = new Intent(this, typeof(MainActivity));
+              Drawable myIcon4 = Resources.GetDrawable(Resource.Drawable.tab1);
+              tabData4.setIcon(myIcon4).setText("text").setIntent(intent);
+              tabData[3] = tabData4;
+
+               bottomBar.init(tabData);*/
+
             bottomBar = (MyBottomBar)FindViewById(Resource.Id.footer);
             imgBack = ((ImageView)FindViewById(Resource.Id.imgBack));
             headingText = ((TextView)FindViewById(Resource.Id.heading_text));

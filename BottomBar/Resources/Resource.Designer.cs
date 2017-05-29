@@ -2116,8 +2116,14 @@ namespace BottomBar
 			// aapt resource value: 0x7f0a0052
 			public const int submit_area = 2131361874;
 			
+			// aapt resource value: 0x7f0a0084
+			public const int tab = 2131361924;
+			
 			// aapt resource value: 0x7f0a000b
 			public const int tabMode = 2131361803;
+			
+			// aapt resource value: 0x7f0a0085
+			public const int tab_icon = 2131361925;
 			
 			// aapt resource value: 0x7f0a0066
 			public const int tab_icon1 = 2131361894;
@@ -2130,6 +2136,9 @@ namespace BottomBar
 			
 			// aapt resource value: 0x7f0a0069
 			public const int tab_icon4 = 2131361897;
+			
+			// aapt resource value: 0x7f0a0086
+			public const int tab_text = 2131361926;
 			
 			// aapt resource value: 0x7f0a0082
 			public const int text = 2131361922;
@@ -2369,6 +2378,9 @@ namespace BottomBar
 			
 			// aapt resource value: 0x7f030034
 			public const int support_simple_spinner_dropdown_item = 2130903092;
+			
+			// aapt resource value: 0x7f030035
+			public const int tab = 2130903093;
 			
 			static Layout()
 			{

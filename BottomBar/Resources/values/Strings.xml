@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">My Application</string>
+  <string name="back">Back</string>
+  <string name="tab_icon">tab_icon</string>
+  <string name="tab">tab</string>
+  <string name="title_activity_main2">Main2Activity</string>
+</resources>

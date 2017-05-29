@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+  <View
+      android:id="@+id/footer_border"
+      android:layout_width="match_parent"
+      android:layout_height="1px"
+      android:background="@color/dark_grey"
+      android:orientation="horizontal" />
+  <RadioGroup
+      android:gravity="center"
+      android:id="@+id/bottombar"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+    <RadioButton
+        android:gravity="center"
+        android:id="@+id/tab_icon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="first"
+        android:textColor="@color/textColorRB"
+        android:background="@android:color/transparent"
+        android:button="@android:color/transparent"
+        android:drawableTop="@drawable/tab1"
+        android:contentDescription="@string/tab_icon" />
+    <RadioButton
+        android:gravity="center"
+        android:id="@+id/tab_icon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="second"
+         android:textColor="@color/textColorRB"
+        android:background="@android:color/transparent"
+        android:button="@android:color/transparent"
+        android:drawableTop="@drawable/tab2"
+        android:contentDescription="@string/tab_icon" />
+    <RadioButton
+        android:gravity="center"
+        android:id="@+id/tab_icon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="third"
+         android:textColor="@color/textColorRB"
+        android:background="@android:color/transparent"
+        android:button="@android:color/transparent"
+        android:drawableTop="@drawable/tab3"
+        android:contentDescription="@string/tab_icon" />
+    <RadioButton
+        android:gravity="center"
+        android:id="@+id/tab_icon4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fourth"
+         android:textColor="@color/textColorRB"
+        android:background="@android:color/transparent"
+        android:button="@android:color/transparent"
+        android:drawableTop="@drawable/tab4"
+        android:contentDescription="@string/tab_icon" />
+  </RadioGroup>
+  <LinearLayout
+      android:visibility="gone"
+      android:id="@+id/example"
+      android:orientation="vertical"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content" />
+</LinearLayout>

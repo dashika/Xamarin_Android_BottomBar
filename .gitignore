@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+BottomBar/obj/
+BottomBar/bin/
